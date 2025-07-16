@@ -1,0 +1,18 @@
+/* Safari-specific fixes */
+@media not all and (min-resolution: .001dpcm) {
+  @supports (-webkit-appearance: none) {
+    html,
+    body {
+      background-color: white !important;
+      background: white !important;
+    }
+
+    #__next,
+    main,
+    div#__next > div,
+    div#__next > main {
+      background-color: white !important;
+      background: white !important;
+    }
+  }
+}
