@@ -356,7 +356,7 @@ export default function LandingPage() {
           <div className="container px-4 md:px-6 max-w-[720px]">
             <div className="text-center space-y-6">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal text-white">
-                From Full Risk Picture to Decision, Faster
+                Make Risk-Based Decisions Faster
               </h2>
               <p className="text-lg sm:text-xl font-normal text-white max-w-2xl mx-auto">
                 Book a no-strings-attached demo.
