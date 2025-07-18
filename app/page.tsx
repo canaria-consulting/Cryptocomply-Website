@@ -453,6 +453,16 @@ export default function LandingPage() {
                   </a>
                 </li>
                 <li>
+                  <a
+                    href="https://www.canariaconsulting.com/press-center"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-[#2c2e2e]/70 hover:text-[#bed903]"
+                  >
+                    Press Center
+                  </a>
+                </li>
+                <li>
                   <Link href="/terms-of-service" className="text-sm text-[#2c2e2e]/70 hover:text-[#bed903]">
                     Terms
                   </Link>{" "}
