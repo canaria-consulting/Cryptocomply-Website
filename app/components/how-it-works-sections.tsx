@@ -286,7 +286,7 @@ export default function HowItWorksSections() {
     },
     {
       number: "04",
-      title: "Have a Conversation with Your Compliance",
+      title: "Have a conversation with your compliance",
       description:
         "Turn static policies and manuals into an interactive experience. Instead of digging through documents and procedures, simply ask your AI assistant, and get fast, policy-aligned answers.",
       features: [
