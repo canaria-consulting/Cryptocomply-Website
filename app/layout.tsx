@@ -5,9 +5,9 @@ import "./safari-fix.css"
 import { ThemeProvider } from "@/components/theme-provider"
 
 export const metadata: Metadata = {
-  title: "CryptoComply - Smart Due Diligence for Web3",
+  title: "CryptoComply – Your AI Compliance Assistant for Web3",
   description:
-    "Automate your wallet and counterparty due diligence with AI-driven onboarding, ongoing monitoring, and risk-based decisions.",
+    "Talk to your compliance program, get AI-guided answers, and act on risks faster. From onboarding to ongoing monitoring, CryptoComply helps you stay ahead of both on- and off-chain threats with clarity and confidence.",
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
@@ -17,9 +17,9 @@ export const metadata: Metadata = {
     apple: { url: "/apple-touch-icon.png", type: "image/png", sizes: "180x180" },
   },
   openGraph: {
-    title: "CryptoComply - Smart Due Diligence for Web3",
+    title: "CryptoComply – Your AI Compliance Assistant for Web3",
     description:
-      "Automate your wallet and counterparty due diligence with AI-driven onboarding, ongoing monitoring, and risk-based decisions.",
+      "Talk to your compliance program, get AI-guided answers, and act on risks faster. From onboarding to ongoing monitoring, CryptoComply helps you stay ahead of both on- and off-chain threats with clarity and confidence.",
     url: "https://cryptocomply.co/",
     siteName: "CryptoComply",
     images: [
@@ -27,13 +27,13 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "CryptoComply - Smart Due Diligence for Web3",
+        alt: "CryptoComply – Your AI Compliance Assistant for Web3",
       },
       {
         url: "/og-image-square.png",
         width: 1200,
         height: 1200,
-        alt: "CryptoComply - Smart Due Diligence for Web3",
+        alt: "CryptoComply – Your AI Compliance Assistant for Web3",
       },
     ],
     locale: "en_US",
@@ -41,9 +41,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "CryptoComply - Smart Due Diligence for Web3",
+    title: "CryptoComply – Your AI Compliance Assistant for Web3",
     description:
-      "Automate your wallet and counterparty due diligence with AI-driven onboarding, ongoing monitoring, and risk-based decisions.",
+      "Talk to your compliance program, get AI-guided answers, and act on risks faster. From onboarding to ongoing monitoring, CryptoComply helps you stay ahead of both on- and off-chain threats with clarity and confidence.",
     images: ["/og-image.png", "/og-image-square.png"],
     creator: "@cryptocomply",
     site: "@cryptocomply",
