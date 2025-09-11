@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { Bell, Sliders, Sparkles, ArrowRight, Menu, Shield } from "lucide-react"
+import { Brain, Eye, Clock, Users, ArrowRight, Menu } from "lucide-react"
 import { useState, useEffect } from "react"
 
 import { Button } from "@/components/ui/button"
@@ -176,12 +176,12 @@ export default function LandingPage() {
                       />
                     </div>
                     <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter">
-                      The Full Picture of Your Web3 Risk, In One Platform
+                      Your AI Crypto Compliance Assistant
                     </span>
                   </h1>
                   <h3 className="text-lg sm:text-xl md:text-2xl text-white/80 max-w-2xl font-light">
-                    CryptoComply combines on-chain analytics, watchlist screening, adverse media, and expert human
-                    support to automate full-spectrum due diligence and accelerate compliance decisions.
+                    Talk to your compliance program, stay ahead of on- and off-chain risks, get expert recommendations,
+                    and be your own compliance officer.
                   </h3>
                 </div>
               </div>
@@ -208,60 +208,64 @@ export default function LandingPage() {
         <section id="features" className="py-16 md:py-24 lg:py-32 bg-[#f3f3f3]">
           <div className="container px-4 md:px-6">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal text-center mb-12 md:mb-20 text-[#2c2e2e]">
-              Why CryptoComply
+              Why Teams Choose Us
             </h2>
-            <div className="grid sm:grid-cols-2 gap-8 md:gap-16">
-              {/* Feature 1 */}
-              <div className="space-y-4">
-                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-[#bed903] rounded-lg flex items-center justify-center">
-                  <Shield className="h-6 w-6 sm:h-7 sm:w-7 text-[#2c2e2e]" />
-                </div>
-                <h3 className="text-xl sm:text-2xl font-normal text-[#2c2e2e]">
-                  One platform for comprehensive risk and decisions
-                </h3>
-                <p className="text-base font-light text-[#2c2e2e] max-w-lg">
-                  CryptoComply integrates seamlessly with your on-chain analytics tools like Chainalysis, TRM, and
-                  Elliptic, then adds off-chain screening agains 250+ global sanctions/watchlists, adverse media
-                  sources, and secure data collection workflows.
-                </p>
-              </div>
 
-              {/* Feature 2 */}
-              <div className="space-y-4">
-                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-[#bed903] rounded-lg flex items-center justify-center">
-                  <Bell className="h-6 w-6 sm:h-7 sm:w-7 text-[#2c2e2e]" />
+            {/* Updated Layout - Single column on mobile, 2x2 grid on larger screens */}
+            <div className="max-w-5xl mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16">
+                {/* Feature 1 */}
+                <div className="flex gap-6 items-start">
+                  <div className="w-14 h-14 bg-[#bed903] rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Brain className="h-7 w-7 text-[#2c2e2e]" />
+                  </div>
+                  <div className="space-y-3">
+                    <h3 className="text-xl sm:text-2xl font-normal text-[#2c2e2e]">AI Assistant</h3>
+                    <p className="text-base font-light text-[#2c2e2e] leading-relaxed">
+                      Move beyond raw data. Get context-aware responses, summaries, and alerts aligned to your
+                      compliance policies.
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-normal text-[#2c2e2e]">
-                  Continuous monitoring and custom re-screening
-                </h3>
-                <p className="text-base font-light text-[#2c2e2e] max-w-lg">
-                  Monitor counterparties and blockchain addresses through automated re-screening at your chosen cadence.
-                  Get alerts when new on-chain or off-chain risks emerge.
-                </p>
-              </div>
 
-              {/* Feature 3 */}
-              <div className="space-y-4">
-                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-[#bed903] rounded-lg flex items-center justify-center">
-                  <Sparkles className="h-6 w-6 sm:h-7 sm:w-7 text-[#2c2e2e]" />
+                {/* Feature 2 */}
+                <div className="flex gap-6 items-start">
+                  <div className="w-14 h-14 bg-[#bed903] rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Eye className="h-7 w-7 text-[#2c2e2e]" />
+                  </div>
+                  <div className="space-y-3">
+                    <h3 className="text-xl sm:text-2xl font-normal text-[#2c2e2e]">Continuous Coverage</h3>
+                    <p className="text-base font-light text-[#2c2e2e] leading-relaxed">
+                      Automated re-screening for counterparties and wallets, on your schedule.
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-normal text-[#2c2e2e]">AI-generated risk summaries</h3>
-                <p className="text-base font-light text-[#2c2e2e] max-w-lg">
-                  Get AI-backed insights aligned to your policy for each wallet and entity. Generate clear summaries to
-                  accelerate accept, escalate, or reject decisions.
-                </p>
-              </div>
 
-              {/* Feature 4 */}
-              <div className="space-y-4">
-                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-[#bed903] rounded-lg flex items-center justify-center">
-                  <Sliders className="h-6 w-6 sm:h-7 sm:w-7 text-[#2c2e2e]" />
+                {/* Feature 3 */}
+                <div className="flex gap-6 items-start">
+                  <div className="w-14 h-14 bg-[#bed903] rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Clock className="h-7 w-7 text-[#2c2e2e]" />
+                  </div>
+                  <div className="space-y-3">
+                    <h3 className="text-xl sm:text-2xl font-normal text-[#2c2e2e]">Time Saved</h3>
+                    <p className="text-base font-light text-[#2c2e2e] leading-relaxed">
+                      No more digging through news or policies. AI surfaces the risks you should act on first.
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-normal text-[#2c2e2e]">Built-in compliance team</h3>
-                <p className="text-base font-light text-[#2c2e2e] max-w-lg">
-                  Access built-in human support for complex reviews and escalations. Our compliance veterans help you
-                  navigate edge cases and maintain consistent decision-making.
-                </p>
+
+                {/* Feature 4 */}
+                <div className="flex gap-6 items-start">
+                  <div className="w-14 h-14 bg-[#bed903] rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Users className="h-7 w-7 text-[#2c2e2e]" />
+                  </div>
+                  <div className="space-y-3">
+                    <h3 className="text-xl sm:text-2xl font-normal text-[#2c2e2e]">Built-in compliance team</h3>
+                    <p className="text-base font-light text-[#2c2e2e] leading-relaxed">
+                      Access human compliance support for complex reviews and escalations.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -330,8 +334,7 @@ export default function LandingPage() {
               </Link>
               <h2 className="text-2xl sm:text-3xl font-normal text-[#2c2e2e]">CryptoComply is a product of Canaria</h2>
               <p className="text-base sm:text-lg text-[#2c2e2e]/80 max-w-2xl mx-auto">
-                CryptoComply is built by Canaria — a team of crypto compliance veterans who built this platform to solve
-                our own challenges. Now it's powering smarter due diligence across Web3.
+                CryptoComply is built by Canaria — a team of crypto compliance veterans who built this platform to solve our own challenges. Now it&#39;s bringing compliance to DeFi.
               </p>
               <div className="pt-4">
                 <Link

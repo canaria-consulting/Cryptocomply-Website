@@ -506,7 +506,7 @@ export default function OrganicBackground() {
       <canvas ref={canvasLowerRef} className="absolute inset-0 w-full h-full" aria-hidden="true" />
 
       {/* Blur layer with reduced opacity */}
-      <div className="absolute inset-0 backdrop-blur-[60px] bg-[#bed903]/5" />
+      <div className="absolute inset-0 backdrop-blur-[60px]" />
 
       {/* Upper layer with blobs and noise */}
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full opacity-70" aria-hidden="true" />

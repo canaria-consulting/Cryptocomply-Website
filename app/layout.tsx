@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     creator: "@cryptocomply",
     site: "@cryptocomply",
   },
-    generator: 'v0.dev'
+    generator: 'v0.app'
 }
 
 export default function RootLayout({

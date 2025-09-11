@@ -7,8 +7,7 @@ export default function WhoItsForSection() {
         <div className="max-w-4xl mx-auto text-center space-y-8 mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal text-[#2c2e2e]">Who It's For</h2>
           <p className="text-lg sm:text-xl text-[#2c2e2e]/80 max-w-3xl mx-auto">
-            CryptoComply supports a wide range of Web3 teams managing onboarding, grants, payments, and both vendor and
-            partner risk, across the crypto ecosystem.
+            Bringing compliance to DeFi. CryptoComply helps crypto teams manage compliance and risk with an AI-powered platform.  
           </p>
         </div>
 
@@ -20,8 +19,7 @@ export default function WhoItsForSection() {
             </div>
             <h3 className="text-xl font-medium text-[#2c2e2e]">Protocols and Foundations</h3>
             <p className="text-base text-[#2c2e2e]/70">
-              For DeFi protocols, DAOs, and foundations managing treasury operations, partner onboarding, and community
-              or grant disbursements, with added visibility into smart contract, DApp, and liquidity pool exposure.
+              Simplify treasury operations, grants, and community onboarding with visibility into smart contracts, liquidity pools, and counterparties.
             </p>
           </div>
 
@@ -32,8 +30,7 @@ export default function WhoItsForSection() {
             </div>
             <h3 className="text-xl font-medium text-[#2c2e2e]">Exchanges (CEX & DEX)</h3>
             <p className="text-base text-[#2c2e2e]/70">
-              Used by centralized and decentralized exchanges for KYC, risk screening, and ongoing monitoring across
-              wallets, counterparties, and user flows.
+              Automate KYC, ongoing wallet monitoring, and counterparty screening with AI-filtered alerts.
             </p>
           </div>
 
@@ -44,8 +41,7 @@ export default function WhoItsForSection() {
             </div>
             <h3 className="text-xl font-medium text-[#2c2e2e]">Wallet Providers</h3>
             <p className="text-base text-[#2c2e2e]/70">
-              For custodial and non-custodial wallets screening users and tracking wallet activity in real time, with
-              compliance controls, alerts, and audit-ready logs.
+              Screen users, track wallet activity in real time, and manage compliance risks with audit-ready logs.
             </p>
           </div>
 
@@ -56,8 +52,7 @@ export default function WhoItsForSection() {
             </div>
             <h3 className="text-xl font-medium text-[#2c2e2e]">Infrastructure</h3>
             <p className="text-base text-[#2c2e2e]/70">
-              Built for Layer 1s, Layer 2s, bridges, DeFi protocols handling validator onboarding, vendor risk, and
-              technical counterparties, with tools for scalable, automated reviews.
+              Automate KYB/KYC and wallet/vault/LP screening with AI-assisted risk interpretations and configurable monitoring. 
             </p>
           </div>
 
@@ -68,8 +63,7 @@ export default function WhoItsForSection() {
             </div>
             <h3 className="text-xl font-medium text-[#2c2e2e]">Stablecoin and Token Projects</h3>
             <p className="text-base text-[#2c2e2e]/70">
-              Manage compliance around issuers, smart contracts, protocol integrations, and counterparty screening
-              across payment rails and liquidity.
+              Mitigate issuer and counterparty risk across payment rails, liquidity, and integrations.
             </p>
           </div>
 
@@ -80,8 +74,7 @@ export default function WhoItsForSection() {
             </div>
             <h3 className="text-xl font-medium text-[#2c2e2e]">Investors and Allocators</h3>
             <p className="text-base text-[#2c2e2e]/70">
-              For venture firms and funds performing diligence on protocols, tokens, and founders, unifying on-chain
-              exposure with off-chain reputation and media risk.
+              Perform faster diligence on tokens, founders, and protocols with AI-generated risk summaries combining on-chain and off-chain insights.
             </p>
           </div>
         </div>
