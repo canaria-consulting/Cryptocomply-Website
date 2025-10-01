@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react"
 export default function OrganicBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const canvasLowerRef = useRef<HTMLCanvasElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null) // Added ref for parent container
   const [isScrolling, setIsScrolling] = useState(false)
   const scrollingTimerRef = useRef<NodeJS.Timeout | null>(null)
   const animationFrameUpperRef = useRef<number | null>(null)
@@ -48,16 +49,16 @@ export default function OrganicBackground() {
   // Animation for the lower layer (below the blur)
   useEffect(() => {
     const canvas = canvasLowerRef.current
-    if (!canvas) return
+    const container = containerRef.current // Get container reference
+    if (!canvas || !container) return
 
     const ctx = canvas.getContext("2d", { willReadFrequently: true })
     if (!ctx) return
 
-    // Set canvas dimensions with Safari-specific optimizations
     const resizeCanvas = () => {
       const dpr = isSafari.current ? 1 : window.devicePixelRatio || 1
-      const width = window.innerWidth
-      const height = window.innerHeight
+      const width = container.offsetWidth
+      const height = container.offsetHeight
 
       // Ensure we have valid dimensions
       if (width > 0 && height > 0) {
@@ -301,16 +302,16 @@ export default function OrganicBackground() {
   // Animation for the upper layer (above the green waves)
   useEffect(() => {
     const canvas = canvasRef.current
-    if (!canvas) return
+    const container = containerRef.current // Get container reference
+    if (!canvas || !container) return
 
     const ctx = canvas.getContext("2d", { willReadFrequently: true })
     if (!ctx) return
 
-    // Set canvas dimensions with Safari-specific optimizations
     const resizeCanvas = () => {
       const dpr = isSafari.current ? 1 : window.devicePixelRatio || 1
-      const width = window.innerWidth
-      const height = window.innerHeight
+      const width = container.offsetWidth
+      const height = container.offsetHeight
 
       // Ensure we have valid dimensions
       if (width > 0 && height > 0) {
@@ -498,19 +499,17 @@ export default function OrganicBackground() {
 
   // Make sure the organic background doesn't extend beyond its container
   return (
-    <div className="absolute inset-0 overflow-hidden" style={{ backgroundColor: "transparent" }}>
+    <div ref={containerRef} className="absolute inset-0 overflow-hidden" style={{ backgroundColor: "transparent" }}>
+      {" "}
+      {/* Added ref to container */}
       {/* Base dark background */}
       <div className="absolute inset-0 bg-[#2c2e2e]" />
-
       {/* Lower layer with green waves and orbs */}
       <canvas ref={canvasLowerRef} className="absolute inset-0 w-full h-full" aria-hidden="true" />
-
       {/* Blur layer with reduced opacity */}
       <div className="absolute inset-0 backdrop-blur-[60px]" />
-
       {/* Upper layer with blobs and noise */}
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full opacity-70" aria-hidden="true" />
-
       {/* Overlay gradient for better text readability */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#2c2e2e]/80 to-transparent" />
     </div>

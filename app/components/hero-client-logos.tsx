@@ -80,7 +80,7 @@ export default function HeroClientLogos() {
         {clients.map((client, index) => (
           <div
             key={index}
-            className={`flex items-center justify-center min-h-[32px] w-[calc(50%-0.5rem)] sm:w-[calc(25%-0.75rem)] xl:w-[calc(20%-0.8rem)] ${client.containerClassName || ""}`}
+            className={`flex items-center justify-center min-h-[32px] w-[calc(50%-0.5rem)] sm:w-[calc(25%-0.75rem)] xl:w-[calc(11.11%-0.89rem)] ${client.containerClassName || ""}`}
             style={{
               transform: client.transform,
             }}

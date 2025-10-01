@@ -71,7 +71,7 @@ body {
     --muted-foreground: 215 20.2% 65.1%;
 
     --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
@@ -87,6 +87,6 @@ body {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-helvetica;
+    @apply bg-background text-foreground;
   }
 }

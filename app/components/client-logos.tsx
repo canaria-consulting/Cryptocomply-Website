@@ -5,78 +5,79 @@ export function ClientLogos() {
     {
       name: "RIPPLE",
       logo: "/images/client-logos/ripple-logo-new.png",
-      width: 150,
-      height: 50,
-      containerClassName: "-mx-2 -my-14",
+      width: 100, // Scaled down from 150
+      height: 33, // Scaled down from 50
+      containerClassName: "-mx-1 -my-6", // Scaled down from -mx-2 -my-14
     },
     {
       name: "OKX",
       logo: "/images/client-logos/okx-logo.svg",
-      width: 100,
-      height: 30,
+      width: 67, // Scaled down from 100
+      height: 20, // Scaled down from 30
     },
     {
       name: "TRUMP MEME",
       logo: "/images/client-logos/trump-meme-logo.png",
-      width: 160,
-      height: 45,
+      width: 107, // Scaled down from 160
+      height: 30, // Scaled down from 45
+      specialFilter: false, // Changed to false to use same filter as siblings
     },
     {
       name: "WORMHOLE FOUNDATION",
       logo: "/images/client-logos/wormhole-foundation-logo.png",
-      width: 250,
-      height: 60,
-      containerClassName: "-mx-8",
+      width: 167, // Scaled down from 250
+      height: 40, // Scaled down from 60
+      containerClassName: "-mx-3", // Scaled down from -mx-8
     },
     {
       name: "CELO",
       logo: "/images/client-logos/celo-logo.svg",
-      width: 114,
-      height: 26,
+      width: 76, // Scaled down from 114
+      height: 17, // Scaled down from 26
     },
     {
       name: "ARKHAM",
       logo: "/images/client-logos/arkham-logo.png",
-      width: 160,
-      height: 45,
-      transform: "translateY(4px)",
-      className: "mx-4",
-      containerClassName: "-mx-4",
+      width: 107, // Scaled down from 160
+      height: 30, // Scaled down from 45
+      transform: "translateY(2px)", // Scaled down from translateY(4px)
+      className: "mx-2", // Scaled down from mx-4
+      containerClassName: "-mx-2", // Scaled down from -mx-4
     },
     {
       name: "NEAR",
       logo: "/images/client-logos/near-logo.png",
-      width: 130,
-      height: 45,
-      className: "mx-4",
-      containerClassName: "-mx-4",
+      width: 87, // Scaled down from 130
+      height: 30, // Scaled down from 45
+      className: "mx-2", // Scaled down from mx-4
+      containerClassName: "-mx-2", // Scaled down from -mx-4
     },
     {
       name: "FALCONX",
       logo: "/images/client-logos/falconx-logo.png",
-      width: 160,
-      height: 45,
-      className: "mx-4",
-      containerClassName: "-mx-4",
+      width: 107, // Scaled down from 160
+      height: 30, // Scaled down from 45
+      className: "mx-2", // Scaled down from mx-4
+      containerClassName: "-mx-2", // Scaled down from -mx-4
     },
     {
       name: "VEDA",
-      logo: "/images/client-logos/veda-logo.png",
-      width: 140,
-      height: 40,
-      className: "mx-4",
-      containerClassName: "-mx-4",
+      logo: "/images/client-logos/veda-logo-tertiary.png",
+      width: 93, // Scaled down from 140
+      height: 27, // Scaled down from 40
+      className: "mx-2",
+      containerClassName: "-mx-2",
     },
   ]
 
   return (
     <section className="pb-10 bg-white">
       <div className="container max-w-full">
-        <div className="flex flex-wrap justify-center gap-8 items-center">
+        <div className="flex flex-wrap justify-center gap-4 items-center">
           {clients.map((client, index) => (
             <div
               key={index}
-              className={`flex items-center justify-center min-h-[60px] w-[calc(50%-1rem)] sm:w-[calc(25%-1.5rem)] xl:w-[calc(20%-1.6rem)] ${client.containerClassName || ""}`}
+              className={`flex items-center justify-center min-h-[32px] w-[calc(50%-0.5rem)] sm:w-[calc(25%-0.75rem)] xl:w-[calc(11.11%-0.89rem)] ${client.containerClassName || ""}`}
               style={{
                 transform: client.transform,
               }}
