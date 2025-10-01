@@ -60,6 +60,14 @@ export default function HeroClientLogos() {
       className: "mx-2", // Scaled down from mx-4
       containerClassName: "-mx-2", // Scaled down from -mx-4
     },
+    {
+      name: "VEDA",
+      logo: "/images/client-logos/veda-logo-tertiary.png",
+      width: 93, // Scaled down from 140
+      height: 27, // Scaled down from 40
+      className: "mx-2",
+      containerClassName: "-mx-2",
+    },
   ]
 
   return (
@@ -68,11 +76,11 @@ export default function HeroClientLogos() {
         <p className="text-sm font-medium text-white/60 uppercase tracking-wider">Trusted by leading Web3 teams</p>
       </div>
 
-      <div className="grid grid-cols-2 [&:not(:where([class~='max-[1300px]:grid-cols-2']))]:grid-cols-4 max-[1300px]:grid-cols-2 xl:grid-cols-8 gap-4 place-items-center">
+      <div className="flex flex-wrap justify-center gap-4 items-center">
         {clients.map((client, index) => (
           <div
             key={index}
-            className={`flex items-center justify-center min-h-[32px] ${client.containerClassName || ""}`}
+            className={`flex items-center justify-center min-h-[32px] w-[calc(50%-0.5rem)] sm:w-[calc(25%-0.75rem)] xl:w-[calc(20%-0.8rem)] ${client.containerClassName || ""}`}
             style={{
               transform: client.transform,
             }}

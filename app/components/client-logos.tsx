@@ -59,16 +59,24 @@ export function ClientLogos() {
       className: "mx-4",
       containerClassName: "-mx-4",
     },
+    {
+      name: "VEDA",
+      logo: "/images/client-logos/veda-logo.png",
+      width: 140,
+      height: 40,
+      className: "mx-4",
+      containerClassName: "-mx-4",
+    },
   ]
 
   return (
     <section className="pb-10 bg-white">
       <div className="container max-w-full">
-        <div className="grid grid-cols-2 [&:not(:where([class~='max-[1300px]:grid-cols-2']))]:grid-cols-4 max-[1300px]:grid-cols-2 xl:grid-cols-8 gap-8 place-items-center">
+        <div className="flex flex-wrap justify-center gap-8 items-center">
           {clients.map((client, index) => (
             <div
               key={index}
-              className={`flex items-center justify-center min-h-[60px] ${client.containerClassName || ""}`}
+              className={`flex items-center justify-center min-h-[60px] w-[calc(50%-1rem)] sm:w-[calc(25%-1.5rem)] xl:w-[calc(20%-1.6rem)] ${client.containerClassName || ""}`}
               style={{
                 transform: client.transform,
               }}
