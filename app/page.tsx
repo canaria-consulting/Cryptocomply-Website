@@ -81,12 +81,12 @@ export default function LandingPage() {
             >
               LOG IN
             </a>
-            <Link href="#get-demo">
+            <Link href="/register">
               <Button
                 variant="outline"
                 className="border-[#2c2e2e] text-[#2c2e2e] hover:bg-transparent hover:border-[#2c2e2e] font-medium tracking-wide px-4 sm:px-6 py-1.5 text-[13px] text-[13px] rounded-none transition-all duration-300 hover:shadow-[0_0_0_1px_#2c2e2e] group bg-transparent"
               >
-                GET A DEMO
+                REGISTER
                 <ArrowRight className="ml-2 h-4 w-4 text-[#bed903] transition-transform duration-300 group-hover:translate-x-1" />
               </Button>
             </Link>
@@ -136,12 +136,12 @@ export default function LandingPage() {
               >
                 PLATFORM
               </Link>
-              <Link href="#get-demo" onClick={() => setMobileMenuOpen(false)}>
+              <Link href="/register" onClick={() => setMobileMenuOpen(false)}>
                 <Button
                   variant="outline"
                   className="w-full border-[#2c2e2e] text-[#2c2e2e] hover:bg-transparent hover:border-[#2c2e2e] font-medium tracking-wide px-4 py-1.5 text-[13px] rounded-none transition-all duration-300 hover:shadow-[0_0_0_1px_#2c2e2e] group bg-transparent"
                 >
-                  GET A DEMO
+                  REGISTER
                   <ArrowRight className="ml-2 h-4 w-4 text-[#bed903] transition-transform duration-300 group-hover:translate-x-1" />
                 </Button>
               </Link>
@@ -334,7 +334,8 @@ export default function LandingPage() {
               </Link>
               <h2 className="text-2xl sm:text-3xl font-normal text-[#2c2e2e]">CryptoComply is a product of Canaria</h2>
               <p className="text-base sm:text-lg text-[#2c2e2e]/80 max-w-2xl mx-auto">
-                CryptoComply is built by Canaria — a team of crypto compliance veterans who built this platform to solve our own challenges. Now it&#39;s bringing compliance to DeFi.
+                CryptoComply is built by Canaria — a team of crypto compliance veterans who built this platform to solve
+                our own challenges. Now it's bringing compliance to DeFi.
               </p>
               <div className="pt-4">
                 <Link
@@ -425,7 +426,7 @@ export default function LandingPage() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="#get-demo" className="text-sm text-[#2c2e2e]/70 hover:text-[#bed903]">
+                  <Link href="/register" className="text-sm text-[#2c2e2e]/70 hover:text-[#bed903]">
                     Get a Demo
                   </Link>
                 </li>
