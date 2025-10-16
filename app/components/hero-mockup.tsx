@@ -7,7 +7,7 @@ export default function HeroMockup() {
   const [isTyping, setIsTyping] = useState(false)
 
   return (
-    <div className="w-full max-w-4xl mx-auto h-full bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 min-h-[400px] sm:min-h-[500px] flex flex-col">
+    <div className="w-full max-w-4xl mx-auto h-full bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 min-h-[400px] sm:min-h-[500px] flex flex-col pointer-events-none select-none">
       {/* Header */}
       <div className="border-b px-3 sm:px-4 md:px-6 py-3 sm:py-4 flex items-center justify-between bg-white">
         <div className="flex items-center gap-2">
