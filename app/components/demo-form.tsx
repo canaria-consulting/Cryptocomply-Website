@@ -69,27 +69,60 @@ export default function DemoForm() {
     setIsSubmitting(true)
 
     try {
-      // Send data to the API endpoint with trailing slash
-      const response = await fetch("https://api-dev.cryptocomply.co/api/bizdev/leads/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          company_name: formData.companyName,
-          email: formData.email,
-          first_name: formData.firstName,
-          job_title: formData.jobTitle,
-          last_name: formData.lastName,
-          message: formData.message,
+      // Send data to both endpoints in parallel
+      const [externalResponse, emailResponse] = await Promise.allSettled([
+        // External API endpoint
+        fetch("https://api-dev.cryptocomply.co/api/bizdev/leads/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            company_name: formData.companyName,
+            email: formData.email,
+            first_name: formData.firstName,
+            job_title: formData.jobTitle,
+            last_name: formData.lastName,
+            message: formData.message,
+          }),
         }),
-      })
+        // Internal email API
+        fetch("/api/demo", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            companyName: formData.companyName,
+            email: formData.email,
+            firstName: formData.firstName,
+            jobTitle: formData.jobTitle,
+            lastName: formData.lastName,
+            message: formData.message,
+          }),
+        }),
+      ])
 
-      if (!response.ok) {
-        throw new Error(`Error: ${response.status}`)
+      // Check if external API succeeded
+      if (externalResponse.status === "fulfilled" && !externalResponse.value.ok) {
+        console.error("External API error:", externalResponse.value.status)
       }
 
-      // Handle successful submission
+      // Check if email API succeeded
+      if (emailResponse.status === "fulfilled" && !emailResponse.value.ok) {
+        console.error("Email API error:", emailResponse.value.status)
+      }
+
+      // If both failed, show error
+      if (
+        externalResponse.status === "rejected" &&
+        (emailResponse.status === "rejected" ||
+          (emailResponse.status === "fulfilled" && !emailResponse.value.ok))
+      ) {
+        throw new Error("Both submission methods failed")
+      }
+
+      // Handle successful submission (if at least one succeeded)
       setIsSubmitted(true)
       setFormData({
         email: "",

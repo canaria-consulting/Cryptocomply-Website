@@ -22,16 +22,34 @@ export default function RegisterPage() {
   })
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setError(null)
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+    try {
+      const response = await fetch("/api/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
 
-    setIsSubmitted(true)
-    setIsSubmitting(false)
+      if (!response.ok) {
+        const errorData = await response.json()
+        throw new Error(errorData.error || "Failed to submit registration")
+      }
+
+      setIsSubmitted(true)
+    } catch (err) {
+      console.error("Registration error:", err)
+      setError(err instanceof Error ? err.message : "Failed to submit registration. Please try again.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -49,7 +67,42 @@ export default function RegisterPage() {
       {/* Registration Form Overlay */}
       <div className="relative z-10 min-h-screen flex items-center justify-center p-4">
         <div className="w-full max-w-md">
-          {!isSubmitted ? (
+          {isSubmitted ? (
+            <div className="bg-white rounded-lg shadow-2xl p-8 space-y-6 text-center">
+              <div className="flex justify-center">
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
+                  <CheckCircle2 className="h-10 w-10 text-green-600" />
+                </div>
+              </div>
+              <div className="space-y-3">
+                <h2 className="text-2xl font-bold text-[#2c2e2e] font-helvetica">Registration Received!</h2>
+                <p className="text-gray-600 font-helvetica">
+                  Our team will reach out shortly to activate your account.
+                </p>
+              </div>
+              <div className="pt-4 space-y-3">
+                <Link href="/">
+                  <Button
+                    variant="outline"
+                    className="w-full border-[#2c2e2e] text-[#2c2e2e] hover:bg-gray-50 font-medium py-6 rounded-md bg-transparent font-helvetica"
+                  >
+                    Return to Home
+                  </Button>
+                </Link>
+                <p className="text-xs text-gray-500 font-helvetica">
+                  Questions?{" "}
+                  <a
+                    href="https://www.canariaconsulting.com/contact"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#bed903] hover:underline"
+                  >
+                    Contact our team
+                  </a>
+                </p>
+              </div>
+            </div>
+          ) : (
             <div className="bg-white rounded-lg shadow-2xl p-8 space-y-6">
               {/* Header */}
               <div className="space-y-2">
@@ -169,6 +222,12 @@ export default function RegisterPage() {
                   />
                 </div>
 
+                {error && (
+                  <div className="p-3 bg-red-50 border border-red-200 rounded-md">
+                    <p className="text-sm text-red-600 font-helvetica">{error}</p>
+                  </div>
+                )}
+
                 <Button
                   type="submit"
                   disabled={isSubmitting}
@@ -189,41 +248,6 @@ export default function RegisterPage() {
                 </Link>
                 .
               </p>
-            </div>
-          ) : (
-            <div className="bg-white rounded-lg shadow-2xl p-8 space-y-6 text-center">
-              <div className="flex justify-center">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
-                  <CheckCircle2 className="h-10 w-10 text-green-600" />
-                </div>
-              </div>
-              <div className="space-y-3">
-                <h2 className="text-2xl font-bold text-[#2c2e2e] font-helvetica">Registration Received!</h2>
-                <p className="text-gray-600 font-helvetica">
-                  Our team will contact you to activate your account shortly.
-                </p>
-              </div>
-              <div className="pt-4 space-y-3">
-                <Link href="/">
-                  <Button
-                    variant="outline"
-                    className="w-full border-[#2c2e2e] text-[#2c2e2e] hover:bg-gray-50 font-medium py-6 rounded-md bg-transparent font-helvetica"
-                  >
-                    Return to Home
-                  </Button>
-                </Link>
-                <p className="text-xs text-gray-500 font-helvetica">
-                  Questions?{" "}
-                  <a
-                    href="https://www.canariaconsulting.com/contact"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#bed903] hover:underline"
-                  >
-                    Contact our team
-                  </a>
-                </p>
-              </div>
             </div>
           )}
         </div>
