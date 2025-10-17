@@ -117,7 +117,7 @@ export default function RegisterPage() {
                 </div>
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 bg-[#bed903] rounded-lg flex items-center justify-center">
-                    <Image src="/cryptocomply_icon.svg" alt="CryptoComply" width={24} height={24} />
+                    <Image src="/cryptocomply_icon.png" alt="CryptoComply" width={24} height={24} />
                   </div>
                   <h1 className="text-2xl font-bold text-[#2c2e2e] font-helvetica">Welcome to CryptoComply</h1>
                 </div>
